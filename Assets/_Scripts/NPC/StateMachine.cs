@@ -5,6 +5,7 @@ using UnityEngine;
 public class StateMachine : MonoBehaviour
 {
  #region Variables
+    [System.Serializable]
     public class Transitions
     {
         public StateMachine stateMachine;
@@ -14,6 +15,7 @@ public class StateMachine : MonoBehaviour
     /// <summary>
     /// Pair a state with a following state (using a list for multiple followup state scenarios)
     /// </summary>
+    [System.Serializable]
     public class StatePair
     {
         public State state;

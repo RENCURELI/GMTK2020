@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovingBehaviour : MonoBehaviour
+public class IdleBehaviour : MonoBehaviour
 {
     [System.NonSerialized]
     public bool completed = false;
@@ -18,7 +18,7 @@ public class MovingBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("MovingState");
+        Debug.Log("IdleState");
         timer += Time.deltaTime;
         if (timer >= delay)
         {

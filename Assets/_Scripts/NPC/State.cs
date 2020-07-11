@@ -34,7 +34,7 @@ public abstract class State : ScriptableObject
     public void ExitToTransition(int index)
     {
         StateMachine.Transitions transition = GetTransition(index);
-        stateMachine.activeState.ExitState();
+        stateMachine.activeState = null;
         if (transition != null)
         {
             transition.stateMachine.EnterState(transition.state);

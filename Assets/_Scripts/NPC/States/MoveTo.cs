@@ -2,17 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+[CreateAssetMenu(fileName = "State MoveTo", menuName = "State Machine/States/MoveTo")]
 public class MoveTo : State
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void InitState()
     {
-        
+        stateMachine.GetComponent<MovingBehaviour>().enabled = true;
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void UpdateState()
     {
-        
+        if (stateMachine.GetComponent<MovingBehaviour>().completed)
+        {
+            stateMachine.GetComponent<MovingBehaviour>().completed = false;
+            stateMachine.GetComponent<MovingBehaviour>().enabled = false;
+            ExitState();
+        }
+    }
+
+    public override void ExitState()
+    {
+        ExitToTransition(0);
     }
 }

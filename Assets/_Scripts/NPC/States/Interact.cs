@@ -2,17 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Interact : MonoBehaviour
+[System.Serializable]
+[CreateAssetMenu(fileName = "State Interact", menuName = "State Machine/States/Interact")]
+public class Interact : State
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void InitState()
     {
-        
+        //stateMachine.GetComponent<Behaviour_Interact>().enabled = true;
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void UpdateState()
     {
-        
+        /*if (stateMachine.GetComponent<Behaviour_Interact>().completed)
+        {
+            stateMachine.GetComponent<Behaviour_Interact>().completed = false;
+            stateMachine.GetComponent<Behaviour_Interact>().enabled = false;
+            ExitState();
+        }*/
+    }
+
+    public override void ExitState()
+    {
+        ExitToTransition(0);
     }
 }

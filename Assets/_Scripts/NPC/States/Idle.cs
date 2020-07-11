@@ -6,19 +6,23 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "State Idle", menuName = "State Machine/States/Idle")]
 public class Idle : State
 {
+
+    public float g_duration;
+    public float g_timer;
+
     public override void InitState()
     {
-        //stateMachine.GetComponent<Behaviour_Idle>().enabled = true;
+        g_duration = 2.0f;
+        g_timer = g_duration;
     }
 
     public override void UpdateState()
     {
-        /*if (stateMachine.GetComponent<Behaviour_Idle>().completed)
+        g_timer -= Time.deltaTime;
+        if (g_timer <= 0)
         {
-            stateMachine.GetComponent<Behaviour_Idle>().completed = false;
-            stateMachine.GetComponent<Behaviour_Idle>().enabled = false;
             ExitState();
-        }*/
+        }
     }
 
     public override void ExitState()

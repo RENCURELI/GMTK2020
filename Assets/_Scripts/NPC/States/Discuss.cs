@@ -2,17 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Discuss : MonoBehaviour
+[System.Serializable]
+[CreateAssetMenu(fileName = "State Discuss", menuName = "State Machine/States/Discuss")]
+public class Discuss : State
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void InitState()
     {
-        
+        //stateMachine.GetComponent<Behaviour_Discuss>().enabled = true;
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void UpdateState()
     {
-        
+        /*if (stateMachine.GetComponent<Behaviour_Discuss>().completed)
+        {
+            stateMachine.GetComponent<Behaviour_Discuss>().completed = false;
+            stateMachine.GetComponent<Behaviour_Discuss>().enabled = false;
+            ExitState();
+        }*/
+    }
+
+    public override void ExitState()
+    {
+        ExitToTransition(0);
     }
 }
