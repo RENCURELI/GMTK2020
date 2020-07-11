@@ -29,12 +29,7 @@ public class MovingBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
         Move();
-        if (timer >= delay)
-        {
-            completed = true;
-        }
     }
 
     private void Move()
@@ -42,6 +37,7 @@ public class MovingBehaviour : MonoBehaviour
         if (Vector3.Distance(agent.destination, agent.transform.position) <= distToPoint)
         {
             reachedDest = true;
+            completed = true;
         }
     }
 
