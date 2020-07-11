@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveTo : MonoBehaviour
+public class MoveTo : State
 {
     // Start is called before the first frame update
     void Start()
