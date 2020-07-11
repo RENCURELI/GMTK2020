@@ -5,7 +5,8 @@ using UnityEngine.Events;
 
 public class Sight : MonoBehaviour
 {
-    UnityEvent detectedInteractable;
+    public UnityEvent detectedInteractable;
+    public UnityEvent detectedDiscussion;
 
     private SphereCollider trigger;
 
@@ -54,6 +55,16 @@ public class Sight : MonoBehaviour
                 {
                     Debug.Log("In sight");
                     //Add logic HERE
+                    if (other.GetComponent<StateMachine>().activeState != this.GetComponent<StateMachine>().activeState)
+                    {
+                        //The two objects are not in the same state
+                    }
+                    else
+                    {
+                        //the two objects are in the same state
+                        detectedDiscussion.Invoke();
+                        other.GetComponent<StateMachine>().activeState.ExitToTransition(1); //Move to discuss transition
+                    }
                 }
             }
         }

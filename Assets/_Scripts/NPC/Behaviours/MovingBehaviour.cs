@@ -12,7 +12,7 @@ public class MovingBehaviour : MonoBehaviour
     
     float minDist = 10.0f;
     private float distToPoint = 1.5f;
-    bool reachedDest;
+    bool reachedDest = false;
     Vector3 prevPos;
 
     public float delay;
@@ -24,6 +24,7 @@ public class MovingBehaviour : MonoBehaviour
         agent = this.gameObject.GetComponent<NavMeshAgent>();
         reachedDest = false;
         agent.SetDestination(GenerateRandomDest());
+        prevPos = this.transform.position;
     }
 
     // Update is called once per frame
@@ -67,5 +68,12 @@ public class MovingBehaviour : MonoBehaviour
             dest = prevPos;
         }
         return dest;
+    }
+
+    public void GotoDiscussState()
+    {
+        agent.isStopped = true;
+        this.GetComponent<MoveTo>().ExitToTransition(1); //Exit to discussion state
+        completed = true;
     }
 }
