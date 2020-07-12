@@ -32,7 +32,10 @@ public class PitchScript : MonoBehaviour
         if (condition_volume == true)
             Volume();
         else
+        {
+            volume_inc = definedvolume;
             MainMixer.SetFloat(volumestr, definedvolume);
+        }
         if (condition_vibrato == true)
             Vibrato();
         else
