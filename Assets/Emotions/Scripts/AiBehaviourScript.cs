@@ -4,12 +4,13 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public enum Status
 {
-    AMI = 0,
-    INDIFFERENT = 1,
-    ENNEMI = 2
+    ENNEMI = -1,
+    INDIFFERENT = 0,
+    AMI = 1,
 }
 
 public class AiBehaviourScript : MonoBehaviour
@@ -20,11 +21,12 @@ public class AiBehaviourScript : MonoBehaviour
     public Status statusAI3;
     public Status statusAI4;
     public Status statusAI5;
+    public AudioMixer AudioTrack;
     // Start is called before the first frame update
     void Start()
     {
-        probvalue = 50;
         SetStatus();
+        probvalue = 5 + (int)statusAI1 + (int)statusAI2 + (int)statusAI3 + (int)statusAI4 + (int)statusAI5;
     }
 
     // Update is called once per frame
@@ -36,19 +38,14 @@ public class AiBehaviourScript : MonoBehaviour
     void SetStatus()
     {
         statusAI1 = StatusRandomizer();
-        print(statusAI1);
         statusAI2 = StatusRandomizer();
-        print(statusAI2);
         statusAI3 = StatusRandomizer();
-        print(statusAI3);
         statusAI4 = StatusRandomizer();
-        print(statusAI4);
         statusAI5 = StatusRandomizer();
-        print(statusAI5);
     }
 
     Status StatusRandomizer()
     {
-        return (Status)UnityEngine.Random.Range(0, 3);
+        return (Status)UnityEngine.Random.Range(-1, 2);
     }
 }

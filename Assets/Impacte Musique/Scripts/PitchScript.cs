@@ -6,6 +6,8 @@ using UnityEngine.Audio;
 
 public class PitchScript : MonoBehaviour
 {
+    public string volumestr;
+    public string pitchstr;
     public AudioMixer MainMixer;
     bool condition_vibrato;
     bool condition_volume;
@@ -20,7 +22,7 @@ public class PitchScript : MonoBehaviour
         condition_volume = false;
         condition_bpm = false;
         timer = 0;
-        volume_inc = 0;
+        volume_inc = -10;
     }
 
     void Update()
@@ -29,11 +31,11 @@ public class PitchScript : MonoBehaviour
         if (condition_volume == true)
             Volume();
         else
-            MainMixer.SetFloat("volumeval", 0);
+            MainMixer.SetFloat(volumestr, -10);
         if (condition_vibrato == true)
             Vibrato();
         else
-            MainMixer.SetFloat("pitchval", 1);
+            MainMixer.SetFloat(pitchstr, 1);
     }
 
     public void Vibrato_Switch()
@@ -52,13 +54,13 @@ public class PitchScript : MonoBehaviour
 
     void Vibrato()
     {
-        MainMixer.SetFloat("pitchval", 1 + oscillate(timer, 5, 0.50f));
+        MainMixer.SetFloat(pitchstr, 1 + oscillate(timer, 5, 0.50f));
     }
 
     void Volume()
     {
         volume_inc -= 0.01f;
-        MainMixer.SetFloat("volumeval", volume_inc);
+        MainMixer.SetFloat(volumestr, volume_inc);
     }
 
     float oscillate(float time, float speed, float scale)
