@@ -21,8 +21,8 @@ public class Discuss : State
         }*/
     }
 
-    public override void ExitState()
+    public override bool ExitState()
     {
-        ExitToTransition(0);
+        return base.ExitState();
     }
 }

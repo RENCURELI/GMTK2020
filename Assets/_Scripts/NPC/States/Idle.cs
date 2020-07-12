@@ -25,8 +25,10 @@ public class Idle : State
         }
     }
 
-    public override void ExitState()
+    public override bool ExitState()
     {
-        ExitToTransition(0);
+        base.ExitState();
+        Transition(STATETYPE.MOVETO);
+        return true;
     }
 }

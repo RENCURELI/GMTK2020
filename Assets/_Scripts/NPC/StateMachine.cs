@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class StateMachine : MonoBehaviour
 {
- #region Variables
-    [System.Serializable]
+    #region Variables
+    /*[System.Serializable]
     public class Transitions
     {
         public StateMachine stateMachine;
@@ -20,12 +20,14 @@ public class StateMachine : MonoBehaviour
     {
         public State state;
         public List<Transitions> transitions = new List<Transitions>();
-    }
-
+    }*/
+    
+    public List<State> validStates;
+    public Dictionary<STATETYPE, State> states;
     /// <summary>
     /// List of all states on the current FSM
     /// </summary>
-    public List<StatePair> allStates;
+    //public List<StatePair> allStates;
     /// <summary>
     /// FSM Starting state
     /// </summary>
@@ -45,7 +47,10 @@ public class StateMachine : MonoBehaviour
 
     private void Start()
     {
-        EnterState(startingState);
+        if (startingState != null)
+        {
+            EnterState(startingState);
+        }
     }
 
     /// <summary>
@@ -53,7 +58,17 @@ public class StateMachine : MonoBehaviour
     /// </summary>
     void Init()
     {
-        var stateToCopy = new Dictionary<State, State>();
+
+        states = new Dictionary<STATETYPE, State>();
+
+        foreach (State state in validStates)
+        {
+            if (!states.ContainsKey(0))
+            {
+                states.Add(state.StateType, state);
+            }
+        }
+        /*var stateToCopy = new Dictionary<State, State>();
         
         foreach (StatePair pair in allStates)
         {
@@ -67,10 +82,10 @@ public class StateMachine : MonoBehaviour
                 stateToCopy.Add(pair.state, m_temp);
             }
             pair.state = stateToCopy[pair.state];
-        }
+        }*/
     }
 
-    public StatePair GetPairFromState(State state)
+    /*public StatePair GetPairFromState(State state)
     {
         foreach (StatePair pair in allStates)
         {
@@ -93,7 +108,13 @@ public class StateMachine : MonoBehaviour
                 return;
             }
         }
+    }*/
+
+    public void EnterState(State state)
+    {
+        state.InitState();
     }
+
 
     private void Update()
     {
@@ -107,7 +128,8 @@ public class StateMachine : MonoBehaviour
     {
         if (activeState != null)
         {
-            activeState.OnStateMachineDisable();
+            //activeState.OnStateMachineDisable();
+            activeState.ExitState();
             activeState = null;
         }
     }
@@ -119,5 +141,5 @@ public class StateMachine : MonoBehaviour
             EnterState(startingState);
         }
     }
-#endregion
+    #endregion
 }

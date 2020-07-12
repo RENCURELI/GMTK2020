@@ -2,6 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum EXECUTIONSTATE
+{
+    NONE,
+    ACTIVE,
+    COMPLETED,
+    TERMINATED
+};
+
+public enum STATETYPE
+{
+    NONE,
+    IDLE,
+    MOVETO,
+    INTERACT,
+    DISCUSS
+};
+
 [System.Serializable]
 public abstract class State : ScriptableObject
 {
@@ -11,10 +28,19 @@ public abstract class State : ScriptableObject
     [System.NonSerialized]
     public State firstState; //Start state
 
+    public State nextState;
+
+    public EXECUTIONSTATE ExecutionState { get; protected set; }
+    public bool EnteredState { get; protected set; }
+    public STATETYPE StateType { get; protected set; }
+
     /// <summary>
     /// Manage state initialization and startup
     /// </summary>
-    public virtual void InitState() { }
+    public virtual void InitState()
+    {
+        ExecutionState = EXECUTIONSTATE.ACTIVE;
+    }
 
     /// <summary>
     /// Manage state Update
@@ -24,14 +50,18 @@ public abstract class State : ScriptableObject
     /// <summary>
     /// Manage state transition, exit and disabling
     /// </summary>
-    public virtual void ExitState() { }
+    public virtual bool ExitState()
+    {
+        ExecutionState = EXECUTIONSTATE.COMPLETED;
+        return true;
+    }
 
     public virtual void OnStateMachineDisable() { }
 
     /// <summary>
     /// Move to next state
     /// </summary>
-    public void ExitToTransition(int index)
+    /*public void ExitToTransition(int index)
     {
         StateMachine.Transitions transition = GetTransition(index);
         stateMachine.activeState = null;
@@ -55,6 +85,14 @@ public abstract class State : ScriptableObject
         }
         StateMachine.Transitions transitions = pair.transitions[index];
         return transitions;
-    }
+    }*/
+    public void Transition(STATETYPE type)
+    {
+        if (stateMachine.states.ContainsKey(type))
+        {
+            nextState = stateMachine.states[type];
 
+            stateMachine.EnterState(nextState);
+        }
+    }
 }

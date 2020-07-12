@@ -62,8 +62,8 @@ public class Sight : MonoBehaviour
                     else
                     {
                         //the two objects are in the same state
-                        detectedDiscussion.Invoke();
-                        other.GetComponent<StateMachine>().activeState.ExitToTransition(1); //Move to discuss transition
+                        //detectedDiscussion.Invoke();
+                        //other.GetComponent<StateMachine>().activeState.Transition(STATETYPE.DISCUSS); //Move to discuss transition
                     }
                 }
             }

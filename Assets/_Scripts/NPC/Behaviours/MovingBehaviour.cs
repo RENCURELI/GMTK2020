@@ -70,10 +70,10 @@ public class MovingBehaviour : MonoBehaviour
         return dest;
     }
 
-    public void GotoDiscussState()
+    /*public void GotoDiscussState()
     {
         agent.isStopped = true;
-        this.GetComponent<MoveTo>().ExitToTransition(1); //Exit to discussion state
+        this.GetComponent<MoveTo>().Transition(STATETYPE.DISCUSS); //Exit to discussion state
         completed = true;
-    }
+    }*/
 }

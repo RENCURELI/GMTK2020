@@ -253,15 +253,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2e1480576097f240af837ce3f4c722c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allStates:
-  - state: {fileID: 11400000, guid: 55f0f83389fa3ef4987c1cdbb89007ff, type: 2}
-    transitions:
-    - stateMachine: {fileID: 76877955}
-      state: {fileID: 11400000, guid: 69462c56aefb63547b93076234867ed7, type: 2}
-  - state: {fileID: 11400000, guid: 69462c56aefb63547b93076234867ed7, type: 2}
-    transitions:
-    - stateMachine: {fileID: 76877955}
-      state: {fileID: 11400000, guid: 55f0f83389fa3ef4987c1cdbb89007ff, type: 2}
+  validStates:
+  - {fileID: 11400000, guid: 55f0f83389fa3ef4987c1cdbb89007ff, type: 2}
+  - {fileID: 11400000, guid: 69462c56aefb63547b93076234867ed7, type: 2}
   startingState: {fileID: 11400000, guid: 55f0f83389fa3ef4987c1cdbb89007ff, type: 2}
   activeState: {fileID: 0}
 --- !u!195 &76877956
@@ -460,15 +454,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2e1480576097f240af837ce3f4c722c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allStates:
-  - state: {fileID: 11400000, guid: 55f0f83389fa3ef4987c1cdbb89007ff, type: 2}
-    transitions:
-    - stateMachine: {fileID: 313018943}
-      state: {fileID: 11400000, guid: 69462c56aefb63547b93076234867ed7, type: 2}
-  - state: {fileID: 11400000, guid: 69462c56aefb63547b93076234867ed7, type: 2}
-    transitions:
-    - stateMachine: {fileID: 313018943}
-      state: {fileID: 11400000, guid: 55f0f83389fa3ef4987c1cdbb89007ff, type: 2}
+  validStates:
+  - {fileID: 11400000, guid: 55f0f83389fa3ef4987c1cdbb89007ff, type: 2}
+  - {fileID: 11400000, guid: 69462c56aefb63547b93076234867ed7, type: 2}
   startingState: {fileID: 11400000, guid: 55f0f83389fa3ef4987c1cdbb89007ff, type: 2}
   activeState: {fileID: 0}
 --- !u!195 &313018944
@@ -759,17 +747,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2e1480576097f240af837ce3f4c722c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allStates:
-  - state: {fileID: 11400000, guid: 55f0f83389fa3ef4987c1cdbb89007ff, type: 2}
-    transitions:
-    - stateMachine: {fileID: 363707305}
-      state: {fileID: 11400000, guid: 69462c56aefb63547b93076234867ed7, type: 2}
-  - state: {fileID: 11400000, guid: 69462c56aefb63547b93076234867ed7, type: 2}
-    transitions:
-    - stateMachine: {fileID: 363707305}
-      state: {fileID: 11400000, guid: 55f0f83389fa3ef4987c1cdbb89007ff, type: 2}
-    - stateMachine: {fileID: 363707305}
-      state: {fileID: 11400000, guid: 55f0f83389fa3ef4987c1cdbb89007ff, type: 2}
+  validStates:
+  - {fileID: 11400000, guid: 55f0f83389fa3ef4987c1cdbb89007ff, type: 2}
+  - {fileID: 11400000, guid: 69462c56aefb63547b93076234867ed7, type: 2}
   startingState: {fileID: 11400000, guid: 55f0f83389fa3ef4987c1cdbb89007ff, type: 2}
   activeState: {fileID: 0}
 --- !u!135 &363707306
@@ -898,15 +878,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2e1480576097f240af837ce3f4c722c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allStates:
-  - state: {fileID: 11400000, guid: 55f0f83389fa3ef4987c1cdbb89007ff, type: 2}
-    transitions:
-    - stateMachine: {fileID: 413559746}
-      state: {fileID: 11400000, guid: 69462c56aefb63547b93076234867ed7, type: 2}
-  - state: {fileID: 11400000, guid: 69462c56aefb63547b93076234867ed7, type: 2}
-    transitions:
-    - stateMachine: {fileID: 413559746}
-      state: {fileID: 11400000, guid: 55f0f83389fa3ef4987c1cdbb89007ff, type: 2}
+  validStates:
+  - {fileID: 11400000, guid: 55f0f83389fa3ef4987c1cdbb89007ff, type: 2}
+  - {fileID: 11400000, guid: 69462c56aefb63547b93076234867ed7, type: 2}
   startingState: {fileID: 11400000, guid: 55f0f83389fa3ef4987c1cdbb89007ff, type: 2}
   activeState: {fileID: 0}
 --- !u!195 &413559747
@@ -1594,15 +1568,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2e1480576097f240af837ce3f4c722c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allStates:
-  - state: {fileID: 11400000, guid: 55f0f83389fa3ef4987c1cdbb89007ff, type: 2}
-    transitions:
-    - stateMachine: {fileID: 1418867049}
-      state: {fileID: 11400000, guid: 69462c56aefb63547b93076234867ed7, type: 2}
-  - state: {fileID: 11400000, guid: 69462c56aefb63547b93076234867ed7, type: 2}
-    transitions:
-    - stateMachine: {fileID: 1418867049}
-      state: {fileID: 11400000, guid: 55f0f83389fa3ef4987c1cdbb89007ff, type: 2}
+  validStates:
+  - {fileID: 11400000, guid: 55f0f83389fa3ef4987c1cdbb89007ff, type: 2}
+  - {fileID: 11400000, guid: 69462c56aefb63547b93076234867ed7, type: 2}
   startingState: {fileID: 11400000, guid: 55f0f83389fa3ef4987c1cdbb89007ff, type: 2}
   activeState: {fileID: 0}
 --- !u!195 &1418867050
