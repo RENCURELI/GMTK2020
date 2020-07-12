@@ -10,10 +10,18 @@ public class Idle : State
     public float g_duration;
     public float g_timer;
 
+    public override void OnEnable()
+    {
+        base.OnEnable();
+        StateType = STATETYPE.IDLE;
+        
+    }
+
     public override void InitState()
     {
         g_duration = 2.0f;
         g_timer = g_duration;
+        //StateType = STATETYPE.IDLE;
     }
 
     public override void UpdateState()
@@ -28,7 +36,7 @@ public class Idle : State
     public override bool ExitState()
     {
         base.ExitState();
-        Transition(STATETYPE.MOVETO);
+        //Transition(STATETYPE.MOVETO);
         return true;
     }
 }

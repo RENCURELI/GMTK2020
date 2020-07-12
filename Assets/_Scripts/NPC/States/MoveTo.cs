@@ -6,8 +6,15 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "State MoveTo", menuName = "State Machine/States/MoveTo")]
 public class MoveTo : State
 {
+    public override void OnEnable()
+    {
+        base.OnEnable();
+        StateType = STATETYPE.MOVETO;
+    }
+
     public override void InitState()
     {
+        //StateType = STATETYPE.MOVETO;
         stateMachine.GetComponent<MovingBehaviour>().enabled = true;
     }
 
@@ -24,7 +31,7 @@ public class MoveTo : State
     public override bool ExitState()
     {
         base.ExitState();
-        Transition(STATETYPE.IDLE);
+        //Transition(STATETYPE.IDLE);
         return true;
     }
 }

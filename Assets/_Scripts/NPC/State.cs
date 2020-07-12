@@ -12,7 +12,6 @@ public enum EXECUTIONSTATE
 
 public enum STATETYPE
 {
-    NONE,
     IDLE,
     MOVETO,
     INTERACT,
@@ -33,6 +32,11 @@ public abstract class State : ScriptableObject
     public EXECUTIONSTATE ExecutionState { get; protected set; }
     public bool EnteredState { get; protected set; }
     public STATETYPE StateType { get; protected set; }
+
+    public virtual void OnEnable()
+    {
+        ExecutionState = EXECUTIONSTATE.ACTIVE;
+    }
 
     /// <summary>
     /// Manage state initialization and startup
@@ -86,13 +90,14 @@ public abstract class State : ScriptableObject
         StateMachine.Transitions transitions = pair.transitions[index];
         return transitions;
     }*/
-    public void Transition(STATETYPE type)
+    
+    /*public void Transition(STATETYPE type)
     {
         if (stateMachine.states.ContainsKey(type))
         {
             nextState = stateMachine.states[type];
 
-            stateMachine.EnterState(nextState);
+            stateMachine.EnterState(nextState, type);
         }
-    }
+    }*/
 }

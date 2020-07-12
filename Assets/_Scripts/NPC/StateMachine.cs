@@ -21,8 +21,9 @@ public class StateMachine : MonoBehaviour
         public State state;
         public List<Transitions> transitions = new List<Transitions>();
     }*/
-    
+    [SerializeField]
     public List<State> validStates;
+
     public Dictionary<STATETYPE, State> states;
     /// <summary>
     /// List of all states on the current FSM
@@ -37,9 +38,11 @@ public class StateMachine : MonoBehaviour
     /// </summary>
     public State activeState;
 
-#endregion
+    public State nextState;
 
-#region Methods
+    #endregion
+
+    #region Methods
     private void Awake()
     {
         Init();
@@ -49,7 +52,7 @@ public class StateMachine : MonoBehaviour
     {
         if (startingState != null)
         {
-            EnterState(startingState);
+            EnterState(startingState, STATETYPE.IDLE);
         }
     }
 
@@ -110,7 +113,7 @@ public class StateMachine : MonoBehaviour
         }
     }*/
 
-    public void EnterState(State state)
+    public void EnterState(State state, STATETYPE type)
     {
         state.InitState();
     }
@@ -138,7 +141,7 @@ public class StateMachine : MonoBehaviour
     {
         if (activeState == null)
         {
-            EnterState(startingState);
+            EnterState(startingState, STATETYPE.IDLE);
         }
     }
     #endregion
