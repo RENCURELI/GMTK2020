@@ -9,20 +9,21 @@ public class PitchScript : MonoBehaviour
     public string volumestr;
     public string pitchstr;
     public AudioMixer MainMixer;
+    public float definedvolume;
     bool condition_vibrato;
     bool condition_volume;
-    bool condition_bpm;
+    //bool condition_bpm;
     float timer;
     float volume_inc;
-    float bpm_inc;
+    //float bpm_inc;
 
     void Start()
     {
         condition_vibrato = false;
         condition_volume = false;
-        condition_bpm = false;
+        //condition_bpm = false;
         timer = 0;
-        volume_inc = -10;
+        volume_inc = definedvolume;
     }
 
     void Update()
@@ -31,7 +32,7 @@ public class PitchScript : MonoBehaviour
         if (condition_volume == true)
             Volume();
         else
-            MainMixer.SetFloat(volumestr, -10);
+            MainMixer.SetFloat(volumestr, definedvolume);
         if (condition_vibrato == true)
             Vibrato();
         else
@@ -47,10 +48,10 @@ public class PitchScript : MonoBehaviour
         condition_volume = !condition_volume;
     }
 
-    public void BPM_Switch()
+    /*public void BPM_Switch()
     {
         condition_bpm = !condition_bpm;
-    }
+    }*/
 
     void Vibrato()
     {

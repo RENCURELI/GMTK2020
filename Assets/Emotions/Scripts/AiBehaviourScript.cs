@@ -15,13 +15,13 @@ public enum Status
 
 public class AiBehaviourScript : MonoBehaviour
 {
-    int probvalue;
+    public int probvalue;
     public Status statusAI1;
     public Status statusAI2;
     public Status statusAI3;
     public Status statusAI4;
     public Status statusAI5;
-    public AudioMixer AudioTrack;
+    public GameObject AudioTrack;
     // Start is called before the first frame update
     void Start()
     {

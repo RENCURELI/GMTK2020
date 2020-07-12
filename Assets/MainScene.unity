@@ -165,9 +165,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5bf68549dfc12c4486e3c6a0858d74b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volumestr: volumeval1
-  pitchstr: pitchval1
+  volumestr: volumeval3
+  pitchstr: pitchval3
   MainMixer: {fileID: 24100000, guid: e810e57c3b082d942b3f184c8d096708, type: 2}
+  definedvolume: 5
 --- !u!82 &113633171
 AudioSource:
   m_ObjectHideFlags: 0
@@ -439,9 +440,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5bf68549dfc12c4486e3c6a0858d74b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volumestr: volumeval1
-  pitchstr: pitchval1
+  volumestr: volumeval6
+  pitchstr: pitchval6
   MainMixer: {fileID: 24100000, guid: e810e57c3b082d942b3f184c8d096708, type: 2}
+  definedvolume: 5
 --- !u!82 &291738864
 AudioSource:
   m_ObjectHideFlags: 0
@@ -583,12 +585,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01422f09155cc324696f7d2014ac37f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  probvalue: 0
   statusAI1: 1
   statusAI2: 0
   statusAI3: 2
   statusAI4: 1
   statusAI5: 0
-  AudioTrack: {fileID: 0}
+  AudioTrack: {fileID: 113633168}
 --- !u!1 &511915127
 GameObject:
   m_ObjectHideFlags: 0
@@ -633,9 +636,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5bf68549dfc12c4486e3c6a0858d74b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volumestr: volumeval1
-  pitchstr: pitchval1
+  volumestr: volumeval4
+  pitchstr: pitchval4
   MainMixer: {fileID: 24100000, guid: e810e57c3b082d942b3f184c8d096708, type: 2}
+  definedvolume: 5
 --- !u!82 &511915130
 AudioSource:
   m_ObjectHideFlags: 0
@@ -777,9 +781,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5bf68549dfc12c4486e3c6a0858d74b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volumestr: volumeval1
-  pitchstr: pitchval1
+  volumestr: volumeval5
+  pitchstr: pitchval5
   MainMixer: {fileID: 24100000, guid: e810e57c3b082d942b3f184c8d096708, type: 2}
+  definedvolume: 5
 --- !u!82 &761988335
 AudioSource:
   m_ObjectHideFlags: 0
@@ -921,12 +926,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01422f09155cc324696f7d2014ac37f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  probvalue: 0
   statusAI1: 1
   statusAI2: 0
   statusAI3: 2
   statusAI4: 1
   statusAI5: 0
-  AudioTrack: {fileID: 0}
+  AudioTrack: {fileID: 761988332}
 --- !u!1 &972616361
 GameObject:
   m_ObjectHideFlags: 0
@@ -971,12 +977,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01422f09155cc324696f7d2014ac37f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  probvalue: 0
   statusAI1: 1
   statusAI2: 0
   statusAI3: 2
   statusAI4: 1
   statusAI5: 0
-  AudioTrack: {fileID: 24100000, guid: e810e57c3b082d942b3f184c8d096708, type: 2}
+  AudioTrack: {fileID: 1696024000}
 --- !u!1 &1090900273
 GameObject:
   m_ObjectHideFlags: 0
@@ -1021,12 +1028,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01422f09155cc324696f7d2014ac37f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  probvalue: 0
   statusAI1: 1
   statusAI2: 0
   statusAI3: 2
   statusAI4: 1
   statusAI5: 0
-  AudioTrack: {fileID: 0}
+  AudioTrack: {fileID: 291738861}
 --- !u!1 &1117458301
 GameObject:
   m_ObjectHideFlags: 0
@@ -1071,9 +1079,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5bf68549dfc12c4486e3c6a0858d74b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volumestr: volumeval1
-  pitchstr: pitchval1
+  volumestr: volumeval2
+  pitchstr: pitchval2
   MainMixer: {fileID: 24100000, guid: e810e57c3b082d942b3f184c8d096708, type: 2}
+  definedvolume: 5
 --- !u!82 &1117458304
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1215,12 +1224,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01422f09155cc324696f7d2014ac37f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  probvalue: 0
   statusAI1: 1
   statusAI2: 0
   statusAI3: 2
   statusAI4: 1
   statusAI5: 0
-  AudioTrack: {fileID: 0}
+  AudioTrack: {fileID: 511915127}
 --- !u!1 &1328414301
 GameObject:
   m_ObjectHideFlags: 0
@@ -1443,6 +1453,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1377473265}
+  - component: {fileID: 1377473266}
   m_Layer: 0
   m_Name: MusicGroup
   m_TagString: Untagged
@@ -1470,6 +1481,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1377473266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1377473264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b53b0de2aa5829840a45a7ae3e8f4002, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CharacterList: []
+  BasseAI: {fileID: 972616361}
+  PianoAI: {fileID: 1742422400}
+  BatterieAI: {fileID: 382456295}
+  GuitareAI: {fileID: 1183821376}
+  ViolonAI: {fileID: 802472237}
+  SaxoAI: {fileID: 1090900273}
+  timer: 0
 --- !u!1 &1413107121
 GameObject:
   m_ObjectHideFlags: 0
@@ -1706,6 +1737,7 @@ MonoBehaviour:
   volumestr: volumeval1
   pitchstr: pitchval1
   MainMixer: {fileID: 24100000, guid: e810e57c3b082d942b3f184c8d096708, type: 2}
+  definedvolume: 5
 --- !u!1 &1707011784
 GameObject:
   m_ObjectHideFlags: 0
@@ -1917,12 +1949,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01422f09155cc324696f7d2014ac37f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  probvalue: 0
   statusAI1: 1
   statusAI2: 0
   statusAI3: 2
   statusAI4: 1
   statusAI5: 0
-  AudioTrack: {fileID: 0}
+  AudioTrack: {fileID: 1117458301}
 --- !u!1 &1831765808
 GameObject:
   m_ObjectHideFlags: 0
